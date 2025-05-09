@@ -1,0 +1,51 @@
+-- 📁 /ddl/criacao_tabelas.sql
+CREATE TABLE Curso (
+    id_curso INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Aluno (
+    id_aluno INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    id_curso INT,
+    FOREIGN KEY (id_curso) REFERENCES Curso(id_curso)
+);
+
+CREATE TABLE CategoriaLivro (
+    id_categoria INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Livro (
+    id_livro INT PRIMARY KEY,
+    titulo VARCHAR(200) NOT NULL,
+    autor VARCHAR(100),
+    id_categoria INT,
+    quantidade INT DEFAULT 1 CHECK (quantidade >= 0),
+    FOREIGN KEY (id_categoria) REFERENCES CategoriaLivro(id_categoria)
+);
+
+CREATE TABLE Emprestimo (
+    id_emprestimo INT PRIMARY KEY,
+    id_aluno INT,
+    id_livro INT,
+    data_emprestimo DATE NOT NULL,
+    FOREIGN KEY (id_aluno) REFERENCES Aluno(id_aluno),
+    FOREIGN KEY (id_livro) REFERENCES Livro(id_livro)
+);
+
+CREATE TABLE Devolucao (
+    id_devolucao INT PRIMARY KEY,
+    id_emprestimo INT UNIQUE,
+    data_devolucao DATE,
+    FOREIGN KEY (id_emprestimo) REFERENCES Emprestimo(id_emprestimo)
+);
+
+CREATE TABLE Multa (
+    id_multa INT PRIMARY KEY,
+    id_emprestimo INT,
+    valor DECIMAL(6,2) CHECK (valor >= 0),
+    paga BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (id_emprestimo) REFERENCES Emprestimo(id_emprestimo)
+);
