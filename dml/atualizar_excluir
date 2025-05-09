@@ -1,0 +1,5 @@
+-- 📁 /dml/atualizar_excluir.sql
+UPDATE Aluno SET email = 'joao.novo@email.com' WHERE id_aluno = 1;
+DELETE FROM Aluno WHERE id_aluno NOT IN (
+  SELECT id_aluno FROM Emprestimo
+);
