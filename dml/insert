@@ -1,0 +1,84 @@
+-- 📁 /dml/popular_dados.sql
+INSERT INTO Curso VALUES
+(1, 'Engenharia de Software'),
+(2, 'Direito'),
+(3, 'Medicina'),
+(4, 'Administração'),
+(5, 'Psicologia'),
+(6, 'Arquitetura'),
+(7, 'Matemática'),
+(8, 'Física'),
+(9, 'Enfermagem'),
+(10, 'História');
+
+INSERT INTO CategoriaLivro VALUES
+(1, 'Tecnologia'),
+(2, 'Literatura'),
+(3, 'Ciência'),
+(4, 'História'),
+(5, 'Direito'),
+(6, 'Saúde'),
+(7, 'Administração'),
+(8, 'Psicologia'),
+(9, 'Arquitetura'),
+(10, 'Filosofia');
+
+INSERT INTO Aluno VALUES
+(1, 'João Silva', 'joao@email.com', 1),
+(2, 'Maria Souza', 'maria@email.com', 2),
+(3, 'Carlos Lima', 'carlos@email.com', 3),
+(4, 'Ana Paula', 'ana@email.com', 4),
+(5, 'Ricardo Rocha', 'ricardo@email.com', 5),
+(6, 'Beatriz Ramos', 'beatriz@email.com', 6),
+(7, 'Lucas Alves', 'lucas@email.com', 7),
+(8, 'Fernanda Costa', 'fernanda@email.com', 8),
+(9, 'Marcos Dias', 'marcos@email.com', 9),
+(10, 'Julia Martins', 'julia@email.com', 10);
+
+INSERT INTO Livro VALUES
+(1, 'Banco de Dados Relacional', 'C. Date', 1, 5),
+(2, 'Dom Casmurro', 'Machado de Assis', 2, 3),
+(3, 'Introdução à Psicologia', 'Atkinson', 8, 2),
+(4, 'Arquitetura Moderna', 'Le Corbusier', 9, 1),
+(5, 'Fundamentos de Física', 'Halliday', 3, 4),
+(6, 'História do Brasil', 'Boris Fausto', 4, 2),
+(7, 'Código Civil Comentado', 'Maria Helena Diniz', 5, 3),
+(8, 'Administração Estratégica', 'Chiavenato', 7, 2),
+(9, 'Enfermagem Básica', 'Potter & Perry', 6, 3),
+(10, 'Ética e Filosofia', 'Aristóteles', 10, 1);
+
+INSERT INTO Emprestimo VALUES
+(1, 1, 1, '2024-10-01'),
+(2, 2, 2, '2024-10-02'),
+(3, 3, 3, '2024-10-03'),
+(4, 4, 4, '2024-10-04'),
+(5, 5, 5, '2024-10-05'),
+(6, 6, 6, '2024-10-06'),
+(7, 7, 7, '2024-10-07'),
+(8, 8, 8, '2024-10-08'),
+(9, 9, 9, '2024-10-09'),
+(10, 10, 10, '2024-10-10');
+
+INSERT INTO Devolucao VALUES
+(1, 1, '2024-10-10'),
+(2, 2, '2024-10-11'),
+(3, 3, '2024-10-12'),
+(4, 4, '2024-10-13'),
+(5, 5, '2024-10-14'),
+(6, 6, '2024-10-15'),
+(7, 7, '2024-10-16'),
+(8, 8, '2024-10-17'),
+(9, 9, '2024-10-18'),
+(10, 10, '2024-10-19');
+
+INSERT INTO Multa VALUES
+(1, 1, 5.00, FALSE),
+(2, 2, 0.00, TRUE),
+(3, 3, 2.50, FALSE),
+(4, 4, 0.00, TRUE),
+(5, 5, 3.00, TRUE),
+(6, 6, 0.00, TRUE),
+(7, 7, 1.50, FALSE),
+(8, 8, 0.00, TRUE),
+(9, 9, 2.00, FALSE),
+(10, 10, 0.00, TRUE);
